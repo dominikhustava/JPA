@@ -14,7 +14,7 @@ public class Main {
         var em = emf.createEntityManager();
 
         Product product = new Product();
-        product.setId(100);
+        //product.setId(100);
         product.setName("Beer");
         product.setPrice(10.5);
         product.setExpirationDate(LocalDate.now());

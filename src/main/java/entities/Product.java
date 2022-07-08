@@ -7,7 +7,8 @@ import java.time.LocalDate;
 public class Product {
 
     @Id
-    private int id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)//have to have AI checked id DB
+    private Integer id;
 
     @Basic(optional = false)//must be filled
     private String name;

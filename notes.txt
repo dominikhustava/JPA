@@ -1,0 +1,7 @@
+-Using wrapper types or primitives:
+Wrapper types allows null values, so when the column is null, we know it wasn't set,
+but with primitives e.g int we don't know if 0 was set, or not set (default value)
+
+-GenerationType
+SEQUENCE is not possible in mysql, but for other dbs is the preffered strategy.
+IDENTITY for mysql (be sure to check AI in DB)
