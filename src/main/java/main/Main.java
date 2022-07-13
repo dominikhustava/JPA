@@ -16,8 +16,7 @@ public class Main {
         Product product = new Product();
         //product.setId(100);
         product.setName("Beer");
-        product.setPrice(10.5);
-        product.setExpirationDate(LocalDate.now());
+
 
         try {
             em.getTransaction().begin();

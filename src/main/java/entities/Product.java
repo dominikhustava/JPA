@@ -7,23 +7,24 @@ import java.time.LocalDate;
 public class Product {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)//have to have AI checked id DB
+    @GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
     private Integer id;
+/*TABLE type is similar to sequence(sequence not supported mysql)
+* We have to create table in DB with custom name -> in this example "key_generator"
+* It has to have 2 columns with default names:
+* sequence_name(VARCHAR(100))
+* next_val(INT)
+* */
+
 
     @Basic(optional = false)//must be filled
     private String name;
 
-    //price should not be double but decimal
-    private double price;
-
-    @Column(name = "expiration_date")
-    private LocalDate expirationDate;
-
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -33,21 +34,5 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public LocalDate getExpirationDate() {
-        return expirationDate;
-    }
-
-    public void setExpirationDate(LocalDate expirationDate) {
-        this.expirationDate = expirationDate;
     }
 }
