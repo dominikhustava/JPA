@@ -12,7 +12,7 @@ public class Price {
     private Integer id;
     private Double amount;
 
-    @Enumerated(value = EnumType.ORDINAL)//Ordinal is default just learning purposes
+    @Enumerated(value = EnumType.STRING)//Ordinal is default just learning purposes
     private Currency currency;
 
     public Integer getId() {
