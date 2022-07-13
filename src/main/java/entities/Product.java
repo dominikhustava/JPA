@@ -15,14 +15,6 @@ public class Product {
     )
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "key_generator")
     private Integer id;
-/*TABLE type is similar to sequence(sequence not supported mysql)
-* We have to create table in DB with custom name -> in this example "key_generator"
-* It has to have 2 columns with  names:
-* key_name(VARCHAR(100))
-* key_value(INT)
-* for this entity the value in key_name(pkColumnValue) will be "Product"
-* */
-
 
     @Basic(optional = false)//must be filled
     private String name;

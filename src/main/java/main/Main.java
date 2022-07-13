@@ -1,5 +1,6 @@
 package main;
 
+import entities.Event;
 import entities.Product;
 
 import javax.persistence.Persistence;
@@ -13,15 +14,16 @@ public class Main {
         var emf = Persistence.createEntityManagerFactory("my-persistence-unit");
         var em = emf.createEntityManager();
 
-        Product product = new Product();
-        //product.setId(100);
-        product.setName("Beer");
+        //Product product = new Product();
+        //product.setName("Beer");
 
+        Event event = new Event();
+        event.setDescription("ABCD");
 
         try {
             em.getTransaction().begin();
 
-            em.persist(product);//adding the instance in the context (it's not insert)
+            em.persist(event);//adding the instance in the context (it's not insert)
 
             em.getTransaction().commit();
         }catch (Exception e){
