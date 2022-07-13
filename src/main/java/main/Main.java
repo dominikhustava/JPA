@@ -1,5 +1,6 @@
 package main;
 
+import entities.Employee;
 import entities.Event;
 import entities.Price;
 import entities.Product;
@@ -8,6 +9,7 @@ import entities.enums.Currency;
 import javax.persistence.Persistence;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
@@ -34,6 +36,10 @@ public class Main {
             Event e = new Event();
             e.setEventTime(LocalDateTime.now());
             em.persist(e);
+
+            Employee emp = new Employee();
+            emp.setEmpDate(new Date());
+            em.persist(emp);
 
             em.getTransaction().commit();
         }catch (Exception e){
