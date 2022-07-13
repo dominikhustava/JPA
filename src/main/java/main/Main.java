@@ -1,7 +1,7 @@
 package main;
 
-import entities.Event;
-import entities.Product;
+import entities.Price;
+import entities.enums.Currency;
 
 import javax.persistence.Persistence;
 import java.time.LocalDate;
@@ -14,16 +14,15 @@ public class Main {
         var emf = Persistence.createEntityManagerFactory("my-persistence-unit");
         var em = emf.createEntityManager();
 
-        //Product product = new Product();
-        //product.setName("Beer");
 
-        Event event = new Event();
-        event.setDescription("ABCD");
 
         try {
             em.getTransaction().begin();
 
-            em.persist(event);//adding the instance in the context (it's not insert)
+            Price price = new Price();
+            price.setAmount(100.0);
+            price.setCurrency(Currency.USD);
+            em.persist(price);//adding the instance in the context (it's not insert)
 
             em.getTransaction().commit();
         }catch (Exception e){
