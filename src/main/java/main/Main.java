@@ -1,6 +1,7 @@
 package main;
 
 import entities.*;
+import entities.embeddables.BuildingPK;
 
 import javax.persistence.Persistence;
 
@@ -17,11 +18,18 @@ public class Main {
         try {
             em.getTransaction().begin();
 
-            Department d = new Department();
-            d.setCode("ABCd");
-            d.setName("Dep 1");
-            d.setNo(10);
-            em.persist(d);
+//            Department d = new Department();
+//            d.setCode("ABCd");
+//            d.setName("Dep 1");
+//            d.setNo(10);
+//            em.persist(d);
+
+            Building b = new Building();
+            b.setName("Building 1");
+            b.setId(new BuildingPK());
+            b.getId().setCode("abc");
+            b.getId().setNumber(10);
+            em.persist(b);
 
             em.getTransaction().commit();
         }catch (Exception e){
