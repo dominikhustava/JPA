@@ -18,11 +18,18 @@ public class Main {
         try {
             em.getTransaction().begin();
 
-            Company c1 = new Company();
-            c1.setName("XYZ");
-            c1.setStreet("street");
-            c1.setNumber("123");
-            em.persist(c1);
+            Product p = new Product();
+            p.setName("Beer");
+            p.setPrice(20.5);
+            em.persist(p);// yes we have to persist it to context here cuz it would not be known in context at line 29
+            //yes there is configuration alternative - to use cascade=CascadeType.PERSIST (or CascadeType.ALL)
+            // on @OneToOne
+
+            Detail d = new Detail();
+            d.setKcal(400);
+            d.setProduct(p);
+            em.persist(d);
+
 
             em.getTransaction().commit();
         }catch (Exception e){
