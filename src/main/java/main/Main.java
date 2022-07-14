@@ -1,9 +1,7 @@
 package main;
 
-import entities.Employee;
-import entities.Event;
-import entities.Price;
-import entities.Product;
+import entities.*;
+import entities.embeddables.Address;
 import entities.enums.Currency;
 
 import javax.persistence.Persistence;
@@ -40,6 +38,14 @@ public class Main {
             Employee emp = new Employee();
             emp.setEmpDate(new Date());
             em.persist(emp);
+
+            Company c = new Company();
+            c.setName("Amazon");
+            c.setAddress(new Address());
+            c.getAddress().setCity("London");
+            c.getAddress().setStreet("london street");
+            c.getAddress().setNumber("4");
+            em.persist(c);
 
             em.getTransaction().commit();
         }catch (Exception e){
