@@ -5,7 +5,8 @@ import entities.embeddables.Address;
 import javax.persistence.*;
 
 @Entity
-@SecondaryTable(name = "address")
+@SecondaryTable(name = "address",
+                pkJoinColumns = @PrimaryKeyJoinColumn(name = "company"))
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
