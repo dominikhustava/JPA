@@ -13,6 +13,8 @@ public class Company {
     private String name;
 
     @Embedded
+    @AttributeOverride(name = "no", column = @Column(name = "number"))
+    @AttributeOverride(name = "str", column = @Column(name = "street"))
     private Address address;
 
     public int getId() {

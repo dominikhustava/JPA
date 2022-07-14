@@ -4,24 +4,24 @@ import javax.persistence.Embeddable;
 
 @Embeddable
 public class Address {
-    private String number;
-    private String street;
+    private String no;
+    private String str;
     private String city;
 
-    public String getNumber() {
-        return number;
+    public String getNo() {
+        return no;
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setNo(String no) {
+        this.no = no;
     }
 
-    public String getStreet() {
-        return street;
+    public String getStr() {
+        return str;
     }
 
-    public void setStreet(String street) {
-        this.street = street;
+    public void setStr(String str) {
+        this.str = str;
     }
 
     public String getCity() {

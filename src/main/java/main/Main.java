@@ -43,8 +43,8 @@ public class Main {
             c.setName("Amazon");
             c.setAddress(new Address());
             c.getAddress().setCity("London");
-            c.getAddress().setStreet("london street");
-            c.getAddress().setNumber("4");
+            c.getAddress().setStr("london street");
+            c.getAddress().setNo("4");
             em.persist(c);
 
             em.getTransaction().commit();
