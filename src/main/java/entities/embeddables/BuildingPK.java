@@ -6,15 +6,15 @@ import java.io.Serializable;
 @Embeddable
 public class BuildingPK implements Serializable {
 
-    private int number;
+    private int no;
     private String code;
 
-    public int getNumber() {
-        return number;
+    public int getNo() {
+        return no;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setNo(int no) {
+        this.no = no;
     }
 
     public String getCode() {

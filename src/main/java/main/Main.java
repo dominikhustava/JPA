@@ -28,7 +28,7 @@ public class Main {
             b.setName("Building 1");
             b.setId(new BuildingPK());
             b.getId().setCode("abc");
-            b.getId().setNumber(10);
+            b.getId().setNo(100);
             em.persist(b);
 
             em.getTransaction().commit();

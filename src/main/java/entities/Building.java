@@ -1,6 +1,9 @@
 package entities;
 
 import entities.embeddables.BuildingPK;
+
+import javax.persistence.AttributeOverride;
+import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
 
@@ -8,6 +11,7 @@ import javax.persistence.Entity;
 public class Building {
 
     @EmbeddedId
+    @AttributeOverride(name = "no", column = @Column(name = "number"))
     private BuildingPK id;
     private String name;
 
