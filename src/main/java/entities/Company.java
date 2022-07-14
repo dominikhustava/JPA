@@ -5,6 +5,7 @@ import entities.embeddables.Address;
 import javax.persistence.*;
 
 @Entity
+@SecondaryTable(name = "address")
 public class Company {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,10 +13,10 @@ public class Company {
 
     private String name;
 
-    @Embedded
-    @AttributeOverride(name = "no", column = @Column(name = "number"))
-    @AttributeOverride(name = "str", column = @Column(name = "street"))
-    private Address address;
+    @Column(table = "address")
+    private String street;
+    @Column(table = "address")
+    private String number;
 
     public int getId() {
         return id;
@@ -33,11 +34,19 @@ public class Company {
         this.name = name;
     }
 
-    public Address getAddress() {
-        return address;
+    public String getStreet() {
+        return street;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
     }
 }

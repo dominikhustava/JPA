@@ -18,18 +18,11 @@ public class Main {
         try {
             em.getTransaction().begin();
 
-//            Department d = new Department();
-//            d.setCode("ABCd");
-//            d.setName("Dep 1");
-//            d.setNo(10);
-//            em.persist(d);
-
-            Building b = new Building();
-            b.setName("Building 1");
-            b.setId(new BuildingPK());
-            b.getId().setCode("abc");
-            b.getId().setNo(100);
-            em.persist(b);
+            Company c1 = new Company();
+            c1.setName("XYZ");
+            c1.setStreet("street");
+            c1.setNumber("123");
+            em.persist(c1);
 
             em.getTransaction().commit();
         }catch (Exception e){
