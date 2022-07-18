@@ -1,9 +1,7 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Student {
@@ -12,6 +10,9 @@ public class Student {
     private int id;
 
     private String name;
+
+    @ManyToMany(mappedBy = "students")
+    private List<Professor> professors;
 
     public int getId() {
         return id;
@@ -27,5 +28,13 @@ public class Student {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Professor> getProfessors() {
+        return professors;
+    }
+
+    public void setProfessors(List<Professor> professors) {
+        this.professors = professors;
     }
 }

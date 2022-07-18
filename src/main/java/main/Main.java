@@ -27,6 +27,9 @@ public class Main {
             p1.setStudents(new ArrayList<>());
             p1.getStudents().add(s1);
 
+            s1.setProfessors(new ArrayList<>());
+            s1.getProfessors().add(p1);
+
             em.persist(p1);
             em.persist(s1);
 

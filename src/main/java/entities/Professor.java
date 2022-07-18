@@ -11,6 +11,10 @@ public class Professor {
     private String name;
 
     @ManyToMany
+    @JoinTable(
+            joinColumns = @JoinColumn(name = "professor"),
+            inverseJoinColumns = @JoinColumn(name = "student")
+    )
     private List<Student> students;
 
     public int getId() {
