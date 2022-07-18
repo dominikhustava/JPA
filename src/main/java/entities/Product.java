@@ -10,7 +10,7 @@ public class Product {
     private String name;
     private double price;
 
-    @OneToOne(mappedBy = "product")
+    @OneToOne(mappedBy = "product", optional = false)
     private Detail detail;
 
     public int getId() {
