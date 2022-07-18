@@ -32,11 +32,15 @@ public class Main {
 
             Person p1 = new Person();
             p1.setName("P1");
+            p1.setDocuments(new ArrayList<Document>());
+
 
             Document d1 = new Document();
             d1.setName("DOC 1");
 
             d1.setPerson(p1);
+            p1.getDocuments().add(d1);
+
             em.persist(p1);
             em.persist(d1);
 

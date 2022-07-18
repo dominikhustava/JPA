@@ -39,4 +39,5 @@ public class Document {
     public void setPerson(Person person) {
         this.person = person;
     }
+
 }

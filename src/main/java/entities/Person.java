@@ -1,9 +1,7 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
 
 @Entity
 public class Person {
@@ -12,6 +10,10 @@ public class Person {
     private int id;
 
     private String name;
+
+    //Collection, List, Set
+    @OneToMany(mappedBy = "person")
+    private Collection<Document> documents;
 
     public int getId() {
         return id;
@@ -27,5 +29,13 @@ public class Person {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Collection<Document> getDocuments() {
+        return documents;
+    }
+
+    public void setDocuments(Collection<Document> documents) {
+        this.documents = documents;
     }
 }
