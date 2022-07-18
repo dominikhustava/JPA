@@ -13,6 +13,7 @@ public class Document {
     private String name;
 
     @ManyToOne()
+    @JoinColumn(name = "person")
     private Person person;
 
     public int getId() {
