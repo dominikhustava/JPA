@@ -12,7 +12,7 @@ public class Person {
     private String name;
 
     //Collection, List, Set
-    @OneToMany(mappedBy = "person")
+    @OneToMany(mappedBy = "person", cascade = CascadeType.PERSIST)
     private Collection<Document> documents;
 
     public int getId() {

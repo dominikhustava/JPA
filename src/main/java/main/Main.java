@@ -37,12 +37,12 @@ public class Main {
 
             Document d1 = new Document();
             d1.setName("DOC 1");
-
             d1.setPerson(p1);
+
             p1.getDocuments().add(d1);
 
             em.persist(p1);
-            em.persist(d1);
+            //em.persist(d1);
 
             em.getTransaction().commit();
         }catch (Exception e){
