@@ -4,6 +4,7 @@ import entities.*;
 import entities.embeddables.BuildingPK;
 
 import javax.persistence.Persistence;
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -18,20 +19,16 @@ public class Main {
         try {
             em.getTransaction().begin();
 
+        Employee e1 = new Employee();
+        e1.setName("EMP 1");
 
+        Department d1 = new Department();
+        d1.setName("DEP 1");
+        d1.setEmployees(new ArrayList<>());
+        d1.getEmployees().add(e1);
 
-            Product p = new Product();
-            p.setName("Beer");
-            p.setPrice(20.5);
-            em.persist(p);
-//
-//            Detail d = new Detail();
-//            d.setKcal(400);
-//
-//            d.setProduct(p);
-//            p.setDetail(d);
-//
-//            em.persist(d);
+        em.persist(e1);
+        em.persist(d1);
 
 
             em.getTransaction().commit();

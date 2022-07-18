@@ -9,9 +9,7 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "emp_date")
-    @Temporal(TemporalType.DATE)
-    private Date empDate;
+    private String name;
 
     public int getId() {
         return id;
@@ -21,11 +19,11 @@ public class Employee {
         this.id = id;
     }
 
-    public Date getEmpDate() {
-        return empDate;
+    public String getName() {
+        return name;
     }
 
-    public void setEmpDate(Date empDate) {
-        this.empDate = empDate;
+    public void setName(String name) {
+        this.name = name;
     }
 }

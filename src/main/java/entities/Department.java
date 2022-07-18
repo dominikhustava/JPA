@@ -1,37 +1,25 @@
 package entities;
-
-import entities.pk.DepartmentPK;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.IdClass;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
-@IdClass(DepartmentPK.class)
 public class Department {
+
     @Id
-    private String code;
-    @Id
-    @Column(name = "number")
-    private int no;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
     private String name;
 
-    public String getCode() {
-        return code;
+    @OneToMany
+    private List<Employee> employees;
+
+    public int getId() {
+        return id;
     }
 
-    public void setCode(String code) {
-        this.code = code;
-    }
-
-    public int getNo() {
-        return no;
-    }
-
-    public void setNo(int no) {
-        this.no = no;
+    public void setId(int id) {
+        id = id;
     }
 
     public String getName() {
@@ -40,5 +28,13 @@ public class Department {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }
