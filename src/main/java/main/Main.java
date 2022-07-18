@@ -19,30 +19,16 @@ public class Main {
         try {
             em.getTransaction().begin();
 
-//        Employee e1 = new Employee();
-//        e1.setName("EMP 1");
-//
-//        Department d1 = new Department();
-//        d1.setName("DEP 1");
-//        d1.setEmployees(new ArrayList<>());
-//        d1.getEmployees().add(e1);
-//
-//        em.persist(e1);
-//        em.persist(d1);
+            Student s1 = new Student();
+            s1.setName("Student 1");
 
-            Person p1 = new Person();
-            p1.setName("P1");
-            p1.setDocuments(new ArrayList<Document>());
-
-
-            Document d1 = new Document();
-            d1.setName("DOC 1");
-            d1.setPerson(p1);
-
-            p1.getDocuments().add(d1);
+            Professor p1 = new Professor();
+            p1.setName("Professor 1");
+            p1.setStudents(new ArrayList<>());
+            p1.getStudents().add(s1);
 
             em.persist(p1);
-            //em.persist(d1);
+            em.persist(s1);
 
             em.getTransaction().commit();
         }catch (Exception e){
