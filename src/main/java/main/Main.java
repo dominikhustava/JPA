@@ -21,13 +21,14 @@ public class Main {
             Product p = new Product();
             p.setName("Beer");
             p.setPrice(20.5);
-            em.persist(p);// yes we have to persist it to context here cuz it would not be known in context at line 29
-            //yes there is configuration alternative - to use cascade=CascadeType.PERSIST (or CascadeType.ALL)
-            // on @OneToOne
+            em.persist(p);
 
             Detail d = new Detail();
             d.setKcal(400);
+            
             d.setProduct(p);
+            p.setDetail(d);
+
             em.persist(d);
 
 

@@ -1,9 +1,6 @@
 package entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Product {
@@ -12,6 +9,9 @@ public class Product {
     private int id;
     private String name;
     private double price;
+
+    @OneToOne(mappedBy = "product")
+    private Detail detail;
 
     public int getId() {
         return id;
@@ -35,5 +35,13 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public Detail getDetail() {
+        return detail;
+    }
+
+    public void setDetail(Detail detail) {
+        this.detail = detail;
     }
 }
