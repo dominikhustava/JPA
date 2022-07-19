@@ -11,9 +11,6 @@ public class Department {
 
     private String name;
 
-    @OneToMany
-    private List<Employee> employees;
-
     public int getId() {
         return id;
     }
@@ -30,11 +27,4 @@ public class Department {
         this.name = name;
     }
 
-    public List<Employee> getEmployees() {
-        return employees;
-    }
-
-    public void setEmployees(List<Employee> employees) {
-        this.employees = employees;
-    }
 }

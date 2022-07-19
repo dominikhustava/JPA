@@ -11,6 +11,11 @@ public class Employee {
 
     private String name;
 
+    @Embedded
+    @AttributeOverride(name = "contractNo", column = @Column(name = "contract_no"))
+    @AssociationOverride(name = "department", joinColumns = @JoinColumn(name = "department"))
+    private DepartmentDetails departmentDetails;
+
     public int getId() {
         return id;
     }
@@ -25,5 +30,13 @@ public class Employee {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public DepartmentDetails getDepartmentDetails() {
+        return departmentDetails;
+    }
+
+    public void setDepartmentDetails(DepartmentDetails departmentDetails) {
+        this.departmentDetails = departmentDetails;
     }
 }

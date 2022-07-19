@@ -19,19 +19,19 @@ public class Main {
         try {
             em.getTransaction().begin();
 
-            Student s1 = new Student();
-            s1.setName("Student 1");
+           Department d1 = new Department();
+           d1.setName("Department 1");
 
-            Professor p1 = new Professor();
-            p1.setName("Professor 1");
-            p1.setStudents(new ArrayList<>());
-            p1.getStudents().add(s1);
+           DepartmentDetails dd1 = new DepartmentDetails();
+           dd1.setContractNo("ABC123");
+           dd1.setDepartment(d1);
 
-            s1.setProfessors(new ArrayList<>());
-            s1.getProfessors().add(p1);
+           Employee e1 = new Employee();
+           e1.setName("Emplo 1");
+           e1.setDepartmentDetails(dd1);
 
-            em.persist(p1);
-            em.persist(s1);
+           em.persist(e1);
+           em.persist(d1);
 
             em.getTransaction().commit();
         }catch (Exception e){
