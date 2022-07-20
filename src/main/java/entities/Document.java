@@ -4,7 +4,7 @@ import entities.Person;
 
 import javax.persistence.*;
 
-@Entity
+//@Entity
 public class Document {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
