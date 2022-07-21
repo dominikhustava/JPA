@@ -3,7 +3,7 @@ package entities.element_collection;
 import javax.persistence.*;
 import java.util.List;
 
-    @Entity
+    //@Entity
     public class Person {
 
         @Id
