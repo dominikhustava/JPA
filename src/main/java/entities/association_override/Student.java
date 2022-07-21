@@ -2,7 +2,7 @@ package entities.association_override;
 
 import javax.persistence.*;
 
-@Entity
+//@Entity
 public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
