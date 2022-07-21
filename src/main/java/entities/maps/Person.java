@@ -18,6 +18,7 @@ public class Person {
     @CollectionTable(name = "phone", joinColumns = @JoinColumn(name = "person"))
     @MapKeyColumn(name = "type")
     @Column(name = "number")
+    @MapKeyEnumerated(EnumType.STRING)
     private Map<PhoneType, String> phoneNumbers;
 
     public int getId() {
