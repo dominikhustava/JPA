@@ -2,6 +2,7 @@ package main;
 
 
 
+import entities.enums.PhoneType;
 import entities.maps.Person;
 
 import javax.persistence.Persistence;
@@ -26,8 +27,8 @@ public class Main {
         p.setName("P1");
         p.setPhoneNumbers(new HashMap<>());
 
-        p.getPhoneNumbers().put("Mobile", "12345");
-        p.getPhoneNumbers().put("Home", "45678");
+        p.getPhoneNumbers().put(PhoneType.HOME, "12345");
+        p.getPhoneNumbers().put(PhoneType.MOBILE, "45678");
 
         em.persist(p);
 

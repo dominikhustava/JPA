@@ -1,5 +1,7 @@
 package entities.maps;
 
+import entities.enums.PhoneType;
+
 import javax.persistence.*;
 import java.util.Map;
 
@@ -16,7 +18,7 @@ public class Person {
     @CollectionTable(name = "phone", joinColumns = @JoinColumn(name = "person"))
     @MapKeyColumn(name = "type")
     @Column(name = "number")
-    private Map<String, String> phoneNumbers;
+    private Map<PhoneType, String> phoneNumbers;
 
     public int getId() {
         return id;
@@ -34,11 +36,11 @@ public class Person {
         this.name = name;
     }
 
-    public Map<String, String> getPhoneNumbers() {
+    public Map<PhoneType, String> getPhoneNumbers() {
         return phoneNumbers;
     }
 
-    public void setPhoneNumbers(Map<String, String> phoneNumbers) {
+    public void setPhoneNumbers(Map<PhoneType, String> phoneNumbers) {
         this.phoneNumbers = phoneNumbers;
     }
 }
