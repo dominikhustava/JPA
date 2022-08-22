@@ -10,8 +10,8 @@ public class Detail {
 
     private int kcal;
 
-    @OneToOne
-    private Product product;
+//    @OneToOne
+//    private Product product;
 
     public int getId() {
         return id;
@@ -29,11 +29,11 @@ public class Detail {
         this.kcal = kcal;
     }
 
-    public Product getProduct() {
-        return product;
-    }
-
-    public void setProduct(Product product) {
-        this.product = product;
-    }
+//    public Product getProduct() {
+//        return product;
+//    }
+//
+//    public void setProduct(Product product) {
+//        this.product = product;
+//    }
 }

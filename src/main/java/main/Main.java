@@ -2,9 +2,11 @@ package main;
 
 
 
+import entities.inheritance.Product;
 import entities.enums.PhoneType;
 import entities.inheritance.Animal;
 import entities.inheritance.Cat;
+import entities.inheritance.Chocolate;
 import entities.maps.Person;
 import entities.maps.Professor;
 import entities.maps.Student;
@@ -27,15 +29,15 @@ public class Main {
         try {
             em.getTransaction().begin();
 
-            Animal a = new Animal();
-            a.setName("B");
+            Product p = new Product();
+            p.setName("P");
 
-            Cat cat = new Cat();
-            cat.setName("Duna");
-            cat.setColor("white");
+            Chocolate c = new Chocolate();
+            c.setkCal(100);
+            c.setName("Milka");
 
-            em.persist(a);
-            em.persist(cat);
+            em.persist(p);
+            em.persist(c);
 
             em.getTransaction().commit();
         }catch (Exception e){
